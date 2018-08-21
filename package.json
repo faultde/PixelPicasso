@@ -1,0 +1,24 @@
+{
+  "name": "pixelpicasso",
+  "version": "1.0.0",
+  "description": "Pixel Art Editor",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faultde/PixelPicasso.git"
+  },
+  "author": "Faultde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faultde/PixelPicasso/issues"
+  },
+  "homepage": "https://github.com/faultde/PixelPicasso#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "html2canvas": "^1.0.0-alpha.12",
+    "nodemon": "^1.18.3"
+  }
+}

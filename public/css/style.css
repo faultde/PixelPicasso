@@ -1,0 +1,72 @@
+.red{
+  background:#ff4444;
+}
+.blue{
+  background:#4285F4;
+}
+.green{
+  background:#00C851;
+}
+.yellow{
+  background:#ffbb33;
+}
+
+.white{
+  background:white;
+}
+
+.black{
+  background:black;
+}
+
+.block{
+  color:red;
+  display:inline-block;
+  text-align:center;
+  width:5%;
+  border: 1px solid black;
+ 
+}
+.flex-container{
+  display: inline-flex;
+  flex-wrap: wrap;
+  height:60vh;
+  width:35vw;
+  border:3px solid black;
+  box-sizing: border-box;
+}
+
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+.btn-group-wrap {
+  text-align: center;
+  padding-top:20px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-outline-light{
+  color: #2E2E2E !important;
+}
+
+.navbar-brand{
+  font-family: 'VT323', monospace;
+  font-size: 2em;
+}
+h5{
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* CANVAS */
+canvas{
+  width:100px;
+  height: 100px;
+}
