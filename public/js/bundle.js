@@ -7120,9 +7120,9 @@ var loadSerializedSVG = exports.loadSerializedSVG = function loadSerializedSVG(s
 };
 },{}],59:[function(require,module,exports){
 
-
+//HEREHREHRE
 //INDEX CODE HERE
-document.body.onload = addElement(399);
+document.body.onload = addElement(400);
 
 
 let border = true;
@@ -7146,7 +7146,7 @@ function addElement (divNum) {
    newDiv.dataset.color = "white";
     
   // add to canvas container
-  $(".start").after(newDiv); 
+  $(newDiv).appendTo("#capture"); 
 }}
 
 //color function
@@ -7217,6 +7217,27 @@ function saveImage(){
     document.getElementsByClassName('saved')[0].appendChild(img);
    });
  }
+
+ function gridSize(size){
+
+    if(size == 100){
+        console.log(size);
+        $('.block').remove();
+        addElement(size);
+        $(".block").css('width', "10%");
+        $(".block").css('height', "10%");
+        
+
+    }
+    else{
+        console.log(size);
+        $('.block').remove();
+        addElement(size);
+        $(".block").css('width', "5%");
+        $(".block").css('height', "5%");
+    }
+
+ }
 // BUTTON CONTROLS
 
  $('.draw').click(function(){
@@ -7239,6 +7260,13 @@ function saveImage(){
 
 $(".btn").click(function(){
    $(this).toggleClass('active').siblings().removeClass('active');
+});
+
+$(".gridSize").click(function(){
+    let size = $(this).attr('data-size');
+    gridSize(size);
+
+
 });
 
 },{"html2canvas":35}]},{},[59]);
