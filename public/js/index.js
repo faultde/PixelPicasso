@@ -67,7 +67,8 @@ function draw(color) {
 // reset function
 function reset() {
   $("#capture").children().removeClass("red green blue yellow white black");
-  $("#capture").children().css("background","white");
+  $("#capture").children().addClass('white');
+  $("#capture").children().attr("data-color", "white");
 }
 
 // toggle border/grid
@@ -236,9 +237,8 @@ function random_bg_color() {
     // var bgColor = "rgb(" + x + "," + y + "," + z + ")";
 
     $(this).removeClass("red green blue yellow white black");
-    $(this).css("background",color2Hex(bgColor))
     $(this).addClass(bgColor);
-     $(this).attr("data-color", bgColor);
+     $(this).attr("data-color", color2Hex(bgColor));
     
 });
 }
