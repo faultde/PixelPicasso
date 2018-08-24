@@ -1,0 +1,55 @@
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+.btn-group-wrap {
+    text-align: center;
+    padding-top:20px;
+  }
+  
+  .btn {
+      padding: 14px 24px;
+      border: 0 none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: none !important;
+  }
+  
+  .btn-outline-light{
+    color: #2E2E2E !important;
+  }
+  .btn-outline-active{
+    color: #2E2E2E !important;
+    border: 2px solid black !important;
+    box-sizing: border-box !important;
+    padding:12px 22px;
+  }
+  
+  .navbar-brand{
+    font-family: 'VT323', monospace;
+    font-size: 2em;
+  }
+  .card{
+    border: 3px solid black;
+    border-radius: 1%;
+  }
+  .activeTab{
+    background-color:#33b5e5 !important; 
+    border:white solid 3px !important;
+    border-bottom:none !important;
+    color:white !important;
+    font-weight: 500;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  
+    -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  }
+ .nav-link{ 
+  font-weight: 500;
+    border:none !important;
+
+  }
+  

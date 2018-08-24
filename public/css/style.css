@@ -28,46 +28,65 @@
  
 }
 
-.flex-container{
+.flex-container {
   display: inline-flex;
   flex-wrap: wrap;
-  height:60vh;
-  width:35vw;
-  border:3px solid black;
+  height: 35em;
+  width: 35em;
+  border: 3px solid black;
   box-sizing: border-box;
 }
-
-
-/***********************
-  CUSTON BTN VALUES
-************************/
-.btn-group-wrap {
-  text-align: center;
-  padding-top:20px;
+@media only screen and (max-width: 995px) {
+    .flex-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 20em;
+  width: 20em;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
 }
 
-.btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+@media only screen and (max-width: 780px) {
+    .flex-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 15em;
+  width: 15em;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
 }
 
-.btn-outline-light{
-  color: #2E2E2E !important;
-}
 
-.navbar-brand{
-  font-family: 'VT323', monospace;
-  font-size: 2em;
-}
 h5{
   font-family: 'Open Sans', sans-serif;
 }
 
 /* CANVAS */
 canvas{
-  width:100px;
-  height: 100px;
+  width:500px;
+  height: 250px;
+}
+.archive{
+  margin:20px;
+}
+.archive-body{
+  display: inline-flex;
+  flex-wrap: wrap;
+  height:250px;
+  width:250px;
+
+
+
+}
+#archive-card{
+  border:3px solid black;
+
+
+}
+.archive-body{
+  border:2px solid black;
+
+
 }

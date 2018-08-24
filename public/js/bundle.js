@@ -7189,7 +7189,7 @@ function draw(color) {
 }
 // reset function
 function reset(){
-  $(".block").removeClass('red green blue yellow white black');
+     $('#capture').children().removeClass('red green blue yellow white black');
 }
 
 // toggle border/grid
@@ -7209,45 +7209,87 @@ function toggleBorder(){
   }
 }
 
-function saveImage(){
-  html2canvas(document.querySelector("#capture")).then(function(canvas) {
+//save div clone
+
+function cloneDiv(){
+   let clonedDiv = $('.flex-container').children().clone(true,true);
+    archiveCard(clonedDiv);
+
+}
+
+ //save img card in archive
+ function archiveCard(clonedDiv){
+     html2canvas(document.querySelector("#capture")).then(function(canvas) {
     var img = new Image();
     img.src = canvas.toDataURL("image/png");
-    img.width = 150;
-    document.getElementsByClassName('saved')[0].appendChild(img);
-   });
+    img.width = 250;
+    img.class = "card-image-top";
+    let imageTitle = $('#imageTitle').val();
+    if(!imageTitle){
+        imageTitle = "Pretty Picture";
+    }
+
+  
+     
+     let newCard = $(
+  "<div class='col-sm-6'>" +
+    "<div class='card mt-2'>" +
+      "<div class='card-body'>" +
+        "<h5 class='card-title'>"+imageTitle+"</h5>" +
+        "<p class='archive-body'></p>" +
+        "<a id='delete' class='btn btn-danger text-white'>Delete</a>" +
+      "</div>" +
+    "</div>");
+     $('#archive').append(newCard);
+     $('.archive-body').not(':has(".block")').prepend(clonedDiv);
+    // $('.archive-body').prepend(clonedDiv);
+
+   $('#saved').toggleClass('activeTab').siblings().removeClass('activeTab');
+
+
+    $(".flex-container").hide();
+   $(".gridSize").hide();
+   $(".tabHeader").text("Archive");
+   $("#clear-grid-save").hide();
+   archive.show();
+ });
  }
 
  function gridSize(size){
 
     if(size == 100){
         console.log(size);
-        $('.block').remove();
+        $('#capture').children().remove();
         addElement(size);
-        $(".block").css('width', "10%");
-        $(".block").css('height', "10%");
+      $('#capture').children().css('width', "10%");
+        $('#capture').children().css('height', "10%");
         
 
     }
     else{
         console.log(size);
-        $('.block').remove();
+        $('#capture').children().remove();
         addElement(size);
-        $(".block").css('width', "5%");
-        $(".block").css('height', "5%");
+        $('#capture').children().css('width', "5%");
+      $('#capture').children().css('height', "5%");
     }
 
  }
 // BUTTON CONTROLS
 
  $('.draw').click(function(){
-   console.log(this.id)
+    $("#white").removeClass("btn-outline-active");
    color = this.id;
-   draw(color);
+   draw(this.id);
+
+   if(this.id == "white"){
+       $("#white").addClass("btn-outline-active")
+   }
+
  })
 
  $('#save').click(function(){
-   saveImage();
+   cloneDiv();
  })
 
  $('#reset').click(function(){
@@ -7257,6 +7299,34 @@ function saveImage(){
  $('#grid').click(function(){
    toggleBorder();
  })
+
+
+ //TAB CONTROLS
+ let archive = $("#archive");
+ archive.hide();
+
+ $(".tab").click(function(){
+   $(this).toggleClass('activeTab').siblings().removeClass('activeTab');
+});
+
+//Archive/Save
+$("#saved").click(function(){
+   $(".flex-container").hide();
+   $(".gridSize").hide();
+   $(".tabHeader").text("Archive");
+   $("#clear-grid-save").hide();
+   archive.show();
+});
+//Editor
+$("#editor").click(function(){
+   $(".flex-container").show();
+   $(".gridSize").show();
+   $(".tabHeader").text("Pixel Editor");
+   $("#clear-grid-save").show();
+   archive.hide();
+});
+
+ /////
 
 $(".btn").click(function(){
    $(this).toggleClass('active').siblings().removeClass('active');
