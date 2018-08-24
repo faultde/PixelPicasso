@@ -36,11 +36,11 @@
 
 <div class="container">
 
-<!-- Color Select -->
+
 
   
   <div class="row">
-
+        <!-- Color Select -->
       <div class="btn-group-wrap mx-auto"  style="padding-top:2%">
           <div  role="group" aria-label="Basic example">
             <button type="button" id="red" class="btn btn-outline-danger draw" >Red</button>
@@ -53,19 +53,18 @@
         </div>
         
         
-        <!-- PIXEL EDITOR -->
-
+        <!-- APP -->
     <div class="col-8 mx-auto" style="padding-top:2%">
       <div class="card text-center">
-        <!-- Card Tabs -->
+        <!-- Tabs -->
         <div class="card-header" style="background-color: #0099CC">
           <ul class="nav nav-tabs card-header-tabs" >
             <!-- EDIT TAB -->
-      <li class="nav-item tab activeTab">
-        <a id="editor" class="nav-link"  style="color:white"><i class="fas fa-2x fa-pen-square"></i></a>
+      <li id="editor" class="nav-item tab activeTab">
+        <a  class="nav-link"  style="color:white"><i class="fas fa-2x fa-pen-square"></i></a>
       </li>
-      <!-- SAVED TAB -->
-      <li id="saved"class="nav-item tab">
+            <!-- ARCHIVE TAB -->
+      <li id="saved" class="nav-item tab">
         <a  class="nav-link"  style="color:white"><i class="fas fa-2x fa-archive"></i></a>
       </li>
     </ul>
@@ -79,9 +78,9 @@
           </h2>
         </div>
 
-    
+        <!-- EDITOR BODY -->
       <div class="card-body">
-           <div class="flex-container" id="capture">
+           <div class="flex-container" id="editorGrid">
            </div>
            <div class="row" id="archive">
       
