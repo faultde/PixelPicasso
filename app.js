@@ -41,10 +41,10 @@ app.post('/gridColors', (req, res) => {
 app.get('/storedData', (req, res) => {
   db.collection('gridColor').find().toArray((err, result) => {
     if (err) return console.log(err)
-    // renders index.ejs
-    console.log(result[1].color.length)
-     result = result[1].color;
-    res.render('saved.ejs', {object: result})
+
+    var container = result;
+    console.log("Number of stored objects:" + container.length)
+    res.render('saved.ejs', {container:container })
   })
 })
 

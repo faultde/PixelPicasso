@@ -22,3 +22,14 @@ split into
 
 99 = [378] [379]
      [398] [399]
+
+
+<!-- Function to cycle through Block Colors -->>
+
+          <% for(var i=0; i< container[i].color.length; i++){ %>
+              <% if(container[i].length == 100 ){%>
+                <div class="block border  <%= container[i] %>" style="width: 10%; height: 10%;"></div>
+              <% }else{ %>
+                  <div class="block border  <%= container[i] %>" style="width: 5%; height: 5%;"></div>
+              <% } %>  
+          <% } %>

@@ -10,7 +10,7 @@
 
         
         <!-- APP -->
-    <div class="col-8 mx-auto" style="padding-top:2%">
+    <div class="col-12 mx-auto" style="padding-top:2%">
       <div class="card text-center">
         <!-- Tabs -->
         <div class="card-header" style="background-color: #0099CC">
@@ -24,32 +24,19 @@
         </div>
 
         <!-- EDITOR BODY -->
-      <div class="card-body">
+<div class="card-body">
 
-                      <div class="flex-container" id="editorGrid"> <!-- GRID CONTAINER-->
-              <% for(var i=0; i< object.length; i++){ %>
-              <% if(object.length == 100 ){%>
-               <div class="block border  <%= object[i] %>" style="width: 10%; height: 10%;"></div>
-              <% }else{ %>
-              <div class="block border  <%= object[i] %>" style="width: 5%; height: 5%;"></div>
-               <% } %>  
-             <% } %>
-
-            </div>
-
-          
-            
-        
-        </div>
-
-      </div>
-     </div>
-  </div>
-
-
-
-
+  <% for(var i=0; i< container.length; i++){ %>
+    <div class="flex-container" id="editorGrid">
+        <% for(var a = 0; a < container[i].color.length; i++){ %>
+          <div>test</div>
+        <% } %>
+    </div>
+  <% } %>
+  
 </div>
+
+
 
 
 
