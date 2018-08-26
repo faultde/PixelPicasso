@@ -19,12 +19,20 @@ function addElement(divNum) {
   for (i = 0; i < divNum; i++) {
     // create a new div element
     var newDiv = document.createElement("div");
+    //hidden inputs
+    var colorInput = document.createElement('input');
+    colorInput.type = 'hidden';
+    colorInput.value = "white";
+    colorInput.name = "color";
+    
+    newDiv.appendChild(colorInput);
     //set class and color
     newDiv.className = "block";
     newDiv.dataset.color = "white";
     $(newDiv).addClass("border");
     // add to editor container
     $(newDiv).appendTo("#editorGrid");
+    
   }
 }
 
@@ -60,7 +68,8 @@ function random_bg_color() {
   
     $(this).removeClass("red green blue yellow white black");
     $(this).addClass(bgColor);
-     $(this).attr("data-color", color2Hex(bgColor));
+    $(this).attr("data-color", color2Hex(bgColor));
+    $(this).children().val(bgColor)
     
 });
 }
@@ -72,6 +81,7 @@ function draw(color) {
     $(this).addClass(color);
     color2Hex(color);
     $(this).attr("data-color", color2Hex(color));
+    $(this).children().val(color)
   });
 }
 
