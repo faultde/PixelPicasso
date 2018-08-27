@@ -76,12 +76,29 @@ function random_bg_color() {
 
 // drawing function// add paint option
 function draw(color) {
+  var isDown = false;
+
   $(document).on("click", ".block", function() {
-    $(this).removeClass("red green blue yellow white black");
-    $(this).addClass(color);
+    $(this).removeClass("red green blue yellow white black").addClass(color);
     color2Hex(color);
     $(this).attr("data-color", color2Hex(color));
     $(this).children().val(color)
+
+  });
+  //PAINT MODE
+  $(".block").mousedown(function(){
+    isDown = true;
+  })
+    $(".block").mouseup(function(){
+    isDown = false;
+  })
+    $(".block").mouseover(function(){
+    if(isDown) {       
+    $(this).removeClass("red green blue yellow white black").addClass(color);
+    color2Hex(color);
+    $(this).attr("data-color", color2Hex(color));
+    $(this).children().val(color)
+    }
   });
 }
 
@@ -120,8 +137,10 @@ function archiveCard(clonedDiv) {
       imageTitle +
       "</h5>" +
       "<div class='archive-body'></div>" +
-      "<button id='edit' class='m-1 btn btn-success text-white'>Edit</button>" +
-      "<button type='button' id='delete' class=' m-1 btn btn-danger text-white'>Delete</button>" +
+
+      "<button type='button' id='edit' class='btn btn-success m-1 text-white'><i class='fas fa-edit'></i></button>" +
+      "<button type='button' id='delete' class='btn btn-danger m-1 text-white'><i class='fas fa-trash-alt'></i></button>" +
+      '<button type="button" id="submit" form="gridColors" class="btn m-1 btn-info"><i class="far fa-save"></i></button>' +
       "</div>" +
       "</div>"
   );
@@ -180,7 +199,7 @@ function editorClick(){
 function archiveClick(){
   editorGrid.hide();
   $(".gridSize").hide();
-  $(".tabHeader").text("Archive");
+  $(".tabHeader").text("Local Archive");
   $("#clear-grid-save").hide();
   archive.show();
     $("#saved")
@@ -238,11 +257,19 @@ $( document ).on( 'click', "#delete", function(){
   // Edit
 $( document ).on( 'click', "#edit", function(){
  let archiveClone = $(this).closest(".currentArchive").find(".archive-body").children().clone();
+ let inputData = archiveClone.children();
+ console.log(inputData)
  editorGrid.children().remove();
  archiveClone.appendTo(editorGrid);
  editorClick();
 }); 
-
+  // SUBMIT
+$( document ).on( 'click', "#submit", function(){
+ let archiveClone = $(this).closest(".currentArchive").find(".archive-body").children().clone();
+ let inputData = archiveClone.children();
+  console.log(inputData)
+  $.post("/gridColors",inputData);
+}); 
 
 // Archive TAB
 $("#saved").click(function() {

@@ -38,7 +38,7 @@ app.post('/gridColors', (req, res) => {
 })
 
 
-app.get('/storedData', (req, res) => {
+app.get('/viewAll', (req, res) => {
   db.collection('gridColor').find().toArray((err, result) => {
     if (err) return console.log(err)
 

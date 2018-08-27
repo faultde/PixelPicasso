@@ -5,36 +5,60 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   
 
-<div class="container">
-  <div class="row">
 
-        
-        <!-- APP -->
-    <div class="col-12 mx-auto" style="padding-top:2%">
-      <div class="card text-center">
-        <!-- Tabs -->
-        <div class="card-header" style="background-color: #0099CC">
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">PixelPicasso</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+              <a class="nav-link" href="/">Editor</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/viewAll">View All</a>
+            </li>
+      </ul>
+    </div>
+  </nav>
+<div class="jumbotron jumbotron-fluid bg-transparent">
+  <div class="container">
+    <h1 class="display-4">Availabe User Images</h1>
+  </div>
+</div>
 
-        <div class="card-header" style="background-color: #33b5e5; border-top:white solid 3px;">
-          <h2 class="text-white">
-            <span class="tabHeader">
-                Retrieved From DB</span> 
-          </h2>
-        </div>
+  <div class="container">
+    <div class="row">
 
         <!-- EDITOR BODY -->
-<div class="card-body">
 
-  <% for(var i=0; i< container.length; i++){ %>
-    <div class="flex-container" id="editorGrid">
-        <% for(var a = 0; a < container[i].color.length; i++){ %>
-          <div>test</div>
-        <% } %>
-    </div>
+   <% for(var i=0; i<container.length; i++){ %>
+        <div class="card shadow mb-3 bg-white rounded m-2">
+        <div class="card-body m-1">
+        <h5 class="card-title"> User Image: <%=i%></h5>
+        <div class="flex-container-300">
+
+            <% for(var j=0; j< container[i].color.length; j++){ %>
+            <% if(container[i].color.length == 100 ){%>
+              <div class="block border  <%= container[i].color[j] %>" style="width: 10%; height: 10%;"></div>
+            <% }else{ %>
+              <div class="block border  <%= container[i].color[j]  %>" style="width: 5%; height: 5%;"></div>
+            <% } %>  
+            <% } %>
+            
+            <p>Created by:<%= container[i]._id %></p>
+            
+        </div>
+        </div>
+        </div>
+          
   <% } %>
-  
-</div>
+  </div>
+  </div>
+
+
 
 
 

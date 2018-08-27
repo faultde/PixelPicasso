@@ -6,7 +6,6 @@
   <title>PixelPicasso</title>
   
   
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/customBootstrap.css">
@@ -25,6 +24,12 @@
   
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active float-right">
+              <a class="nav-link" href="/">Editor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/viewAll">View All</a>
+            </li>
       </ul>
     </div>
   </nav>
@@ -73,8 +78,8 @@
           <h2 class="text-white">
             <span class="tabHeader">
                 Pixel Editor</span> 
-            <button type="button"  data-size="400" class="btn btn-sm btn-light float-left gridSize">Large Grid</button> 
-            <button type="button"   data-size="100" class="btn btn-sm btn-light float-right gridSize">Small Grid</button>
+            <button type="button"  data-size="400" class="btn  btn-light float-left gridSize">Large Grid</button> 
+            <button type="button"   data-size="100" class="btn  btn-light float-right gridSize">Small Grid</button>
           </h2>
         </div>
 
@@ -102,10 +107,7 @@
                 <button  id="reset" class="btn btn-danger m-1"  style="color:white;">Clear</button>
                 <button  id="grid" class="btn btn-dark m-1"  style="color:white;">Grid</button>
                 <button id="save" class="btn btn-primary m-1"  style="color:white;" >Save</button>
-                <button type="submit" form="gridColors" class="btn btn-info">Submit</button>
-                <form action="/storedData" method="GET">
-                  <button type="form" action="/storedData" method='get' class="btn btn-info">GET</button>
-                </form> 
+
            
                
                 
